@@ -1,34 +1,117 @@
-TASK 09 – OPTIMIZATION PROBLEM
+Task 09 – Optimization of a Rectangle Under a Curve
+Problem Statement
+A rectangle is inscribed under the curve
 
-Problem:
-Rectangle under curve y = 3 - x² in first quadrant.
-Find dimensions for maximum area.
+$$
+y = 3 - x^2
+$$
 
-Solution:
+in the first quadrant. Determine the dimensions of the rectangle with maximum area.
 
-Let rectangle have width 2x and height y = 3 - x².
+Theory
+If the upper-right corner of the rectangle lies on the curve, then its width and height can be expressed in terms of one variable. The area then becomes a function of that variable, and the maximum can be found using calculus.
 
-Area function:
-A(x) = (2x)(3 - x²) = 6x - 2x³
+Because the rectangle lies in the first quadrant with sides along the axes:
 
-Domain: 0 < x < √3 (since y > 0)
+width is $x$,
+height is $y = 3 - x^2$.
 
-First derivative:
-A'(x) = 6 - 6x²
+Thus the area is
 
-Set A'(x) = 0:
-6 - 6x² = 0
-x² = 1
-x = 1 (positive root)
+$$
+A(x) = x(3 - x^2)
+$$
 
-Second derivative:
-A''(x) = -12x
-A''(1) = -12 < 0 (confirms maximum)
+Step-by-Step Solution
+Area function
+The area is
 
-Dimensions:
-Width = 2x = 2
-Height = 3 - 1² = 2
-Maximum area = 2 × 2 = 4
+$$
+A(x) = x(3 - x^2)
+$$
 
-Final answer:
-Width = 2, Height = 2, Maximum area = 4
+Expand:
+
+$$
+A(x) = 3x - x^3
+$$
+
+Differentiate the area
+$$
+A'(x) = 3 - 3x^2
+$$
+
+Set the derivative equal to zero:
+
+$$
+3 - 3x^2 = 0
+$$
+
+$$
+1 - x^2 = 0
+$$
+
+$$
+x^2 = 1
+$$
+
+Since the rectangle is in the first quadrant, $x > 0$, so
+
+$$
+x = 1
+$$
+
+Determine the corresponding height
+Substitute $x = 1$ into the curve equation:
+
+$$
+y = 3 - x^2
+$$
+
+$$
+y = 3 - 1^2
+$$
+
+$$
+y = 2
+$$
+
+Verify that this gives a maximum
+The second derivative is
+
+$$
+A''(x) = -6x
+$$
+
+At $x = 1$,
+
+$$
+A''(1) = -6 < 0
+$$
+
+so the area is maximized there.
+
+Final Result
+The rectangle of maximum area has dimensions
+
+$$
+\text{width} = 1
+$$
+
+and
+
+$$
+\text{height} = 2
+$$
+
+Its maximum area is
+
+$$
+A_{\max} = 1 \cdot 2 = 2
+$$
+
+Interpretation
+As the rectangle becomes wider, its height decreases because the top-right corner must remain on the parabola. The optimal rectangle balances these two competing effects, producing the maximum area at $(x,y) = (1,2)$.
+
+---
+
