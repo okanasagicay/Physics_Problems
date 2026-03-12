@@ -1,28 +1,93 @@
-TASK 10 – INFINITE SERIES
+Task 10 – Infinite Series and Final Position of an Ant
+Problem Statement
+An ant starts at the origin and moves according to the pattern:
 
-Problem:
-Ant starts at origin, moves:
-1 m east, 1/2 m north, 1/3 m west, 1/4 m south, 1/5 m east, ...
-Find final position.
+$1$ m east,
+$\frac{1}{2}$ m north,
+$\frac{1}{3}$ m west,
+$\frac{1}{4}$ m south,
+$\frac{1}{5}$ m east,
 
-Solution:
+and continues in this way indefinitely.
 
-Track x and y coordinates separately.
+Determine the final position of the ant.
 
-X-coordinate (east-west):
-East movements: 1, 1/3, 1/5, 1/7, ... (odd terms)
-West movements: 1/2, 1/4, 1/6, 1/8, ... (even terms starting from 2)
+Theory
+The motion separates naturally into horizontal and vertical components.
 
-This is the alternating harmonic series:
-1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + ... = ln 2
+Horizontal displacements occur on odd-numbered steps:$1, \frac{1}{3}, \frac{1}{5}, \frac{1}{7}, \dots$
+Vertical displacements occur on even-numbered steps:$\frac{1}{2}, \frac{1}{4}, \frac{1}{6}, \frac{1}{8}, \dots$
 
-Therefore, x-coordinate = ln 2
+The directions alternate:
 
-Y-coordinate (north-south):
-North movements: 1/2, 1/6, 1/10, ... = (1/2)(1 + 1/3 + 1/5 + ...)
-South movements: 1/4, 1/8, 1/12, ... = (1/4)(1 + 1/2 + 1/3 + ...)
+horizontally: east, west, east, west, $\dots$
+vertically: north, south, north, south, $\dots$
 
-This series converges to π/4.
+Therefore, the final coordinates are determined by two alternating series.
 
-Final answer:
-The ant approaches position (ln 2, π/4) ≈ (0.693, 0.785)
+A standard result is
+
+$$
+1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots = \frac{\pi}{4}
+$$
+
+and
+
+$$
+\frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \frac{1}{8} + \cdots = \frac{1}{2}\ln 2
+$$
+
+Step-by-Step Solution
+Horizontal displacement
+The horizontal motion is
+
+$$
+x = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots
+$$
+
+This is the Leibniz series for $\frac{\pi}{4}$, so
+
+$$
+x = \frac{\pi}{4}
+$$
+
+Vertical displacement
+The vertical motion is
+
+$$
+y = \frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \frac{1}{8} + \cdots
+$$
+
+Factor out $\frac{1}{2}$:
+
+$$
+y = \frac{1}{2}\left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots \right)
+$$
+
+The alternating harmonic series satisfies
+
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots = \ln 2
+$$
+
+Therefore,
+
+$$
+y = \frac{1}{2}\ln 2
+$$
+Final Result
+The final position of the ant is
+
+$$
+\left(\frac{\pi}{4}, \frac{1}{2}\ln 2\right)
+$$
+
+Numerically,
+
+$$
+\left(\frac{\pi}{4}, \frac{1}{2}\ln 2\right) \approx (0.785,\ 0.347)
+$$
+
+Interpretation
+The infinite motion converges to a finite point because both coordinate sums are convergent alternating series. Even though the ant keeps moving forever, the cumulative displacement approaches a fixed limit in the plane.
+
