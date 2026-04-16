@@ -6,7 +6,7 @@ I’ll calculate the electric potential at the center of the square step by step
 ## **Step 1: Understand the setup**
 Square side length: \( a = 1.0 \ \text{m} \)  
 Charges at corners in order:  
-\( q_1 = +1 \ \text{C} \)  
+$q_1 = +1 \ \text{C}$  
 \( q_2 = -2 \ \text{C} \)  
 \( q_3 = +3 \ \text{C} \)  
 \( q_4 = -4 \ \text{C} \)
@@ -18,9 +18,10 @@ All placed at corners of a square in cyclic order.
 ## **Step 2: Distance from center to any corner**
 For a square of side \( a \), the distance from center to any corner is half the diagonal:
 
-\[
+$
 r = \frac{\sqrt{a^2 + a^2}}{2} = \frac{a\sqrt{2}}{2} = \frac{a}{\sqrt{2}}
-\]
+$
+
 \[
 r = \frac{1.0}{\sqrt{2}} = \frac{\sqrt{2}}{2} \ \text{m} \approx 0.7071 \ \text{m}
 \]
