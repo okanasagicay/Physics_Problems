@@ -18,9 +18,9 @@ All placed at corners of a square in cyclic order.
 ## **Step 2: Distance from center to any corner**
 For a square of side \( a \), the distance from center to any corner is half the diagonal:
 
-$
+$$
 r = \frac{\sqrt{a^2 + a^2}}{2} = \frac{a\sqrt{2}}{2} = \frac{a}{\sqrt{2}}
-$
+$$
 
 \[
 r = \frac{1.0}{\sqrt{2}} = \frac{\sqrt{2}}{2} \ \text{m} \approx 0.7071 \ \text{m}
