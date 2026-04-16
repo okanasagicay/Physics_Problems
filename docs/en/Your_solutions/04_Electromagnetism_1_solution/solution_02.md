@@ -1,50 +1,116 @@
-Electric Potential at the Center of a Square
-Given
 
-Four point charges are placed at the corners of a square (side length = 1.0 m) in order:
+I’ll calculate the electric potential at the center of the square step by step.
 
-+1 C, −2 C, +3 C, −4 C
+---
 
-Coulomb constant:
+## **Step 1: Understand the setup**
+Square side length: \( a = 1.0 \ \text{m} \)  
+Charges at corners in order:  
+\( q_1 = +1 \ \text{C} \)  
+\( q_2 = -2 \ \text{C} \)  
+\( q_3 = +3 \ \text{C} \)  
+\( q_4 = -4 \ \text{C} \)
 
-𝑘=9×10^9Nm^2/C^2
-We are asked to find the electric potential at the center of the square.
+All placed at corners of a square in cyclic order.
 
-Step 1 — Electric Potential Formula
+---
 
-The electric potential due to a point charge is:
+## **Step 2: Distance from center to any corner**
+For a square of side \( a \), the distance from center to any corner is half the diagonal:
 
-𝑉=𝑘×𝑞/𝑟
+\[
+r = \frac{\sqrt{a^2 + a^2}}{2} = \frac{a\sqrt{2}}{2} = \frac{a}{\sqrt{2}}
+\]
+\[
+r = \frac{1.0}{\sqrt{2}} = \frac{\sqrt{2}}{2} \ \text{m} \approx 0.7071 \ \text{m}
+\]
 
-Since electric potential is a scalar quantity, total potential is the algebraic sum:
+---
 
-Vtotal​=∑ k×qi​​/ri
+## **Step 3: Formula for electric potential**
+Electric potential is scalar:
+\[
+V = \frac{1}{4\pi\epsilon_0} \sum_{i=1}^{4} \frac{q_i}{r}
+\]
+Since \( r \) is the same for all charges:
+\[
+V = \frac{1}{4\pi\epsilon_0} \cdot \frac{1}{r} \left( q_1 + q_2 + q_3 + q_4 \right)
+\]
 
-Step 2 — Distance from Center to Corner
+---
 
-Side length:a = 1 m
-Diagonal of the square: d = sqrt(a^2 + a^2) = sqrt(2)
+## **Step 4: Sum of charges**
+\[
+q_1 + q_2 + q_3 + q_4 = 1 - 2 + 3 - 4
+\]
+\[
+= (1-2) + (3-4) = (-1) + (-1) = -2 \ \text{C}
+\]
 
-Distance from the center to a corner: r = d / 2 = sqrt(2) / 2 m
+---
 
-All charges are at the same distance from the center.
+## **Step 5: Plug into formula**
+\[
+V = \frac{1}{4\pi\epsilon_0} \cdot \frac{1}{0.7071} \cdot (-2)
+\]
 
-Step 3 — Write Total Potential Expression
+We know \( \frac{1}{4\pi\epsilon_0} = 8.9875\times 10^9 \ \text{N·m}^2/\text{C}^2 \), but we can keep it symbolic for now.
 
-V = k * ( 1/r + (-2)/r + 3/r + (-4)/r )
+\[
+V = -\frac{2}{4\pi\epsilon_0 r}
+\]
+\[
+r = \frac{1}{\sqrt{2}}
+\]
+\[
+V = -\frac{2}{4\pi\epsilon_0 \cdot \frac{1}{\sqrt{2}}}
+= -\frac{2\sqrt{2}}{4\pi\epsilon_0}
+\]
 
-Factor out k/r: V = (k / r) * (1 - 2 + 3 - 4) V = (k / r) * (-2)
+---
 
-Step 4 — Substitute Numerical Values
+## **Step 6: Simplify**
+\[
+V = -\frac{\sqrt{2}}{2\pi\epsilon_0}
+\]
 
-V = (9 x 10^9) / (sqrt(2)/2) * (-2)
+Numerically:
+\[
+\frac{1}{4\pi\epsilon_0} \approx 8.9875\times 10^9
+\]
+\[
+\frac{1}{4\pi\epsilon_0} \cdot \frac{1}{r} = (8.9875\times 10^9) \times \sqrt{2} \approx 8.9875\times 10^9 \times 1.41421356
+\]
+\[
+\approx 12.708 \times 10^9 \ \text{N·m/C}
+\]
 
-Dividing by (sqrt(2)/2) is multiplying by (2/sqrt(2)):
+Multiply by \(-2\):
+\[
+V \approx -25.416 \times 10^9 \ \text{V}
+\]
+\[
+V \approx -2.54 \times 10^{10} \ \text{V}
+\]
 
-V = 9 x 10^9 * (2/sqrt(2)) * (-2) V = 9 x 10^9 * (-4/sqrt(2))
+---
 
-Since 4/sqrt(2) ≈ 2.828:
+## **Step 7: TCT file output**
+```tct
+Problem: Electric potential at center of square
+Given: square side 1.0 m
+Charges at corners in order: q1=+1C, q2=-2C, q3=+3C, q4=-4C
 
-V ≈ 9 x 10^9 * (-2.828)
+Distance from center to corner:
+r = a/√2 = 1.0/√2 = 0.70710678 m
 
-Final Answer: V ≈ -2.55 x 10^10 V
+Sum of charges = 1 - 2 + 3 - 4 = -2 C
+
+Electric potential V = (1/(4πε₀)) * (Σq_i)/r
+
+V = (8.98755e9 N·m²/C²) * (-2 C) / (0.70710678 m)
+
+V = -2.5410e10 V
+
+Answer: -2.54 × 10¹⁰ V
+```
